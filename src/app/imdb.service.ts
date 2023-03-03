@@ -6,12 +6,15 @@ import { Peliculas } from './peliculas';
   providedIn: 'root'
 })
 export class ImdbService{
-
+  
   constructor(private _http: HttpClient) {
     
    }
 
   getPeliculas(url: string):Observable<Peliculas[]>{
+    return this._http.get<Peliculas[]>(url);
+  }
+  verActores(url: string):Observable<Peliculas[]>{
     return this._http.get<Peliculas[]>(url);
   }
 }

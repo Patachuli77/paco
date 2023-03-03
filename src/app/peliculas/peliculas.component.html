@@ -23,7 +23,7 @@
   <tbody *ngIf="peliculas">
     <tr *ngFor="let peli of peliculas.results">
       <td><img src={{peli.image}} alt={{peli.title}} width="128px" height="128px"></td>
-      <td>{{peli.title}}</td>
+      <td><a routerLink="/reparto"><button (click)="pulsarNombre(peli)">{{peli.title}}</button></a></td>
       <td><button (click)="anadirFav(peli)">fav</button></td>
     </tr>
   </tbody>
